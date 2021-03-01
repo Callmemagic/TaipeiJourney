@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TaipeiJourney">
-        <activity android:name=".view.DetailActivity"></activity>
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.DetailActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".view.MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
