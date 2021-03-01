@@ -31,7 +31,7 @@
 
     <EditText
         android:id="@+id/etLimit"
-        android:layout_width="@dimen/dp_150"
+        android:layout_width="@dimen/dp_200"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:ems="10"

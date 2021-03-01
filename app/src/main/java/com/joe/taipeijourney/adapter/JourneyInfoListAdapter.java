@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.joe.taipeijourney.R;
 import com.joe.taipeijourney.databinding.JourneyItemViewBinding;
+import com.joe.taipeijourney.listener.OnChooseItemListener;
 import com.joe.taipeijourney.model.JourneyResultsBean;
 
 import java.util.ArrayList;
@@ -22,10 +23,12 @@ public class JourneyInfoListAdapter extends RecyclerView.Adapter<JourneyInfoList
     Context context;
     ArrayList<JourneyResultsBean> alJourneyBean;
     JourneyItemViewBinding journeyItemViewBinding;
+    OnChooseItemListener onChooseItemListener;
 
-    public JourneyInfoListAdapter(Context context, ArrayList<JourneyResultsBean> alJourneyBean) {
+    public JourneyInfoListAdapter(Context context, ArrayList<JourneyResultsBean> alJourneyBean, OnChooseItemListener onChooseItemListener) {
         this.context = context;
         this.alJourneyBean = alJourneyBean;
+        this.onChooseItemListener = onChooseItemListener;
     }
 
     @NonNull
@@ -38,8 +41,17 @@ public class JourneyInfoListAdapter extends RecyclerView.Adapter<JourneyInfoList
     @Override
     public void onBindViewHolder(@NonNull JourneyViewHolder holder, int position) {
         holder.jbinding.tvName.setText(alJourneyBean.get(position).getStitle());
-        holder.jbinding.tvAddress.setText(alJourneyBean.get(position).getInfo());
-        holder.jbinding.tvTag.setText(alJourneyBean.get(position).getXbody());
+        holder.jbinding.tvAddress.setText(String.format(context.getResources().getString(R.string.address),
+                alJourneyBean.get(position).getAddress()));
+        holder.jbinding.tvInfo.setText(String.format(context.getResources().getString(R.string.tag),
+                alJourneyBean.get(position).getCat1() + "," + alJourneyBean.get(position).getCat2()));
+
+        holder.jbinding.llItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onChooseItemListener.onChooseItem(alJourneyBean.get(position));
+            }
+        });
     }
 
     @Override

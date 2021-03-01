@@ -2,10 +2,16 @@
     <string name="app_name">台北旅遊網</string>
     <string name="welcome">歡迎使用台北旅遊網</string>
     <string name="input_keyword_pls">請輸入關鍵字</string>
-    <string name="input_limit_pls">請輸入欲查詢比數上限</string>
+    <string name="input_limit_pls">請輸入查詢比數上限</string>
     <string name="search">查詢</string>
 
     <string name="sittle_name">景點：%1$s</string>
     <string name="address">地址：%1$s</string>
     <string name="tag">標籤：%1$s</string>
+    <string name="info">景點說明：%1$s</string>
+    <string name="MRT">捷運線：%1$s</string>
+    <string name="traffic">交通路線：%1$s</string>
+    <string name="input_remark">可輸入備註</string>
+    <string name="btn_save">儲存</string>
+    <string name="saved">已儲存</string>
 </resources>
